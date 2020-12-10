@@ -26,6 +26,10 @@ This contain the source code and executable of the new DCAL.
 # Software
 This is written using python. The GUI is constructed with pysimplegui and compiled with pyinstaller module. There are two main modes of distribution. One is a single exe file but is slow to start up due to unpacking of dependency to TEMP folder (could be worsen with anti-virus scanning through each file). The second is an exe with a host of dependency files. This is faster but file size is larger. The GUI is the main reason for the huge dependency library. If only Console exe is required, a single exe file will be way faster. 
 
+Please download the Windows Executable from the dropbox link below: 
+
+https://www.dropbox.com/sh/ufgkp2aq7ngstcu/AAB9E9Jc1htorVXomQ11Dzu3a?dl=0
+
 # To-do Lists: 
 1) Include SSD set-up
 2) Include Wedge Factor
