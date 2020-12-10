@@ -7,6 +7,10 @@ This contain the source code and executable of the new DCAL. This currently enab
 2. ROF and PDD are 2D-interpolated with scipy.interpolate
 2. Equivalent Square Field calculated from: 
 
+<p align="center">
+  <img src="./Images/formula1.png" />
+</p>
+
 ![formula1](./Images/formula1.png?style=centerme)
 
 3. Python source code is compiled with PyInstaller
