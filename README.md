@@ -2,7 +2,11 @@
 
 This contain the source code and executable of the new DCAL. This currently enables SAD calculation. Will include SSD, Wedge factor and OAR in the next couple of weeks. 
 
-# Guide 
-1. The data is from GH supposed from Rm2 6X and 10X
-2. GUI is constructed using PysimpleGui
+# Information
+1. Input Data: ROF and PDD from Rm2 for 6X and 10X (from GH)
+2. ROF and PDD are 2D-interpolated with scipy.interpolate
+2. Equivalent Square Field calculated from: 
+$$
+\lambda
+$$
 3. Python source code is compiled with PyInstaller
