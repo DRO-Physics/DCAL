@@ -17,7 +17,9 @@ This contain the source code and executable of the new DCAL.
   <img src="./Images/formula2.png" />
 </p>
 
-4. The MU for SAD setting is calculated using formula fromKhan Medical Physics Eqn. (10.13)
+4. The Phantom Scatter factor is calculated using a fit derived from IMSURE by GuanHeng: Sp = (0.2205 * fs) / (5.883 + fs) + 0.8597
+
+5. The MU for SAD setting is calculated using formula from Khan Medical Physics Eqn. (10.13)
 
 <p align="center">
   <img src="./Images/formula3.png" />
