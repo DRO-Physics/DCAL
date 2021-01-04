@@ -5,7 +5,7 @@ This is a new DCAL to calculate MU required
 
 
 Author: HQTan
-Date: 09/12/20
+Date: 03/1/21
 '''
 #####################################################################################
 
@@ -60,15 +60,15 @@ class DCAL:
         scd = 100.0
         dist_factor = (scd / spd) ## according to Khan notation
         MU = 100 / ((1-shielding) * tmr * rof * dist_factor**2)
+        # self.PrintOutput(ESQ, tmr, pdd_iso, rof, MU)
 
         return {'ESQ':ESQ, 'ROF':rof, 'TMR':tmr, 'MU':MU}
-        # self.PrintOutput(ESQ, tmr, pdd_iso, rof, MU)
 
     def _GetPDD(self, data_pdd, ESQ, depth):
         ## Get PDD via 2d interpolation
         FS = data_pdd['FS']
-        pdd_depth = np.arange(0, len(data_pdd['Data'])*0.5, 0.5)
-        f = interpolate.interp2d(FS, pdd_depth, np.asarray(data_pdd['Data']), kind='linear')
+        pdd_depth = np.arange(0, len(data_pdd['Data'][:,0])*0.1, 0.1) # Depth at step of 0.1 cm
+        f = interpolate.interp2d(FS, pdd_depth, (data_pdd['Data']), kind='linear')
         pdd = f(ESQ, depth)
         if len(pdd) == 1:
             return pdd[0]
@@ -77,7 +77,7 @@ class DCAL:
 
     def _GetROF(self, data_rof, fs_x, fs_y):
         FS = data_rof['FS']
-        f = interpolate.interp2d(FS, FS, np.asarray(data_rof['Data']), kind='linear')
+        f = interpolate.interp2d(FS, FS, (data_rof['Data']), kind='linear')
         rof = f(fs_x, fs_y)
         if len(rof) == 1:
             return rof[0]
