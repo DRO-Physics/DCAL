@@ -67,24 +67,26 @@ class BeamData:
         ## This is for OAR calculation up to FS 25 cm
         ## Data: Depth x FS x Off-axis distance
         FS =  [3,4,6,8,10,20,30,40] # Field Size in cm
-        depth = np.arange(0, 25.0, 0.1) # in step of 0.1cm
+        offaxis = np.arange(0, 25.0, 0.1) # in step of 0.1cm
+        depth = [2.4, 5.0, 10, 20, 30] # in cm
         data_max = [self.beamdata['6MV profile 1.5cm']['FS'][key][0:250] for key in self.beamdata['6MV profile 1.5cm']['FS']]
         data_5cm = [self.beamdata['6MV profile 5cm']['FS'][key][0:250] for key in self.beamdata['6MV profile 5cm']['FS']]
         data_10cm = [self.beamdata['6MV profile 10cm']['FS'][key][0:250] for key in self.beamdata['6MV profile 10cm']['FS']]
         data_20cm = [self.beamdata['6MV profile 20cm']['FS'][key][0:250] for key in self.beamdata['6MV profile 20cm']['FS']]
         data_30cm = [self.beamdata['6MV profile 30cm']['FS'][key][0:250] for key in self.beamdata['6MV profile 30cm']['FS']]
         data = np.array([data_max, data_5cm, data_10cm, data_20cm, data_30cm])
-        return {'FS': FS, 'Data': data, 'Depth': depth}
+        return {'FS': FS, 'Data': data, 'Depth': depth, 'Off-axis': offaxis}
 
     def _Profile_10MV_GB(self):
         ## This is for OAR calculation up to FS 25 cm
         ## Data: Depth x FS x Off-axis distance
         FS =  [3,4,6,8,10,20,30,40] # Field Size in cm
-        depth = np.arange(0, 25.0, 0.1) # in step of 0.1cm
+        offaxis = np.arange(0, 25.0, 0.1) # in step of 0.1cm
+        depth = [2.4, 5.0, 10, 20, 30] # in cm
         data_max = [self.beamdata['10MV profile 2.4cm']['FS'][key][0:250] for key in self.beamdata['10MV profile 2.4cm']['FS']]
         data_5cm = [self.beamdata['10MV profile 5cm']['FS'][key][0:250] for key in self.beamdata['10MV profile 5cm']['FS']]
         data_10cm = [self.beamdata['10MV profile 10cm']['FS'][key][0:250] for key in self.beamdata['10MV profile 10cm']['FS']]
         data_20cm = [self.beamdata['10MV profile 20cm']['FS'][key][0:250] for key in self.beamdata['10MV profile 20cm']['FS']]
         data_30cm = [self.beamdata['10MV profile 30cm']['FS'][key][0:250] for key in self.beamdata['10MV profile 30cm']['FS']]
         data = np.array([data_max, data_5cm, data_10cm, data_20cm, data_30cm])
-        return {'FS': FS, 'Data': data, 'Depth': depth}
+        return {'FS': FS, 'Data': data, 'Depth': depth, 'Off-axis': offaxis}
